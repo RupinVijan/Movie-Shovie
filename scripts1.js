@@ -1,10 +1,10 @@
-const listarr=["Avengers:endgame", "gangs of wasseypur", "american pie", "conjuring" ,"bajrangi bhaijaan","jersey","kuch kuch hota hai","srimanthudu","black panther"];
+const listarr=["money heist","friends","brooklyn nine nine","big bang theory","two and a half men", "vampire diaries",  "suits","big mouth","breaking bad","elite"];
 let j,k;
 const movieplay=["project x", "captain marvel","dark knight rises"];
 const tvplay=["Money heist", "Riverdale","stranger things"];
 
-const Movieslist=["3 Idiots","Jab we met","shershaah","zindagi na milegi dobara","Avengers:endgame", "gangs of wasseypur", "american pie", "conjuring","soorma","The Shawshank Redemption","The Godfather ","12 Angry Men","The Dark Knight","john wick","titanic","inception","harry potter","sholay","dhoom","bahubali","ghazi attack","palasa 1978","gravity","parasite","the wolf of wall street","race 3","bajrangi bhaijaan","jersey","kuch kuch hota hai","srimanthudu","black panther","uri" ,"twilight","the notebook","tenet"];
-const list = document.getElementById("list"),sec1=document.getElementById("sec1");
+const Movieslist=["money heist","friends","brooklyn nine nine","big bang theory","two and a half men", "vampire diaries",  "suits","big mouth","breaking bad","elite","stranger things","riverdale","how i met your mother","special ops","game of thrones", "narcos","peaky blinders","the office","made in heaven","lucifer","never have i ever","you","the boys","prison break","true detective","the blacklist","dexter","the punisher","titans","sex education" ];
+const list = document.getElementById("list");
 const tvshow=document.getElementById("tvshow");
 const movi=document.getElementById("movies");
 const mlist = document.getElementById("movies-list");
@@ -15,7 +15,6 @@ const search=document.getElementById("search");
 const search_bar=document.getElementById("search-bar");
 const imgbox=document.getElementById("imgbox");
 const username=document.getElementById("user-name");
-const dom1=document.getElementById("dom1");
 console.log(ite)
 
 let nam="kissing booth";
@@ -44,6 +43,7 @@ async function apicall(name){
          <img src="${temp[1].Poster}" class="img">
          <img src="${temp[2].Poster}" class="img">
         `;
+        
 
     }
     let index=0;
@@ -52,7 +52,7 @@ async function apicall(name){
         if (index >2){
             index=0;
         }
-        img1.style.transform= `translateX(${-index*280}px)`;
+        img1.style.transform= `translateX(${-index*290}px)`;
 
         
     };
@@ -233,63 +233,63 @@ async function apicall(name){
 
 
 
-carous(movieplay);
+carous(tvplay);
 detsss(listarr);
 movies(Movieslist);
-    async function submitLoginForm(event){
-        event.preventDefault();
-        // apicall(event.target['search'].value);
-        const det= await fetch(" http://www.omdbapi.com/?t="+encodeURI(event.target['search'].value)+"&apikey=e7b6d097");
-        const respdata= await det.json();
+async function submitLoginForm(event){
+    event.preventDefault();
+    // apicall(event.target['search'].value);
+    const det= await fetch(" http://www.omdbapi.com/?t="+encodeURI(event.target['search'].value)+"&apikey=e7b6d097");
+    const respdata= await det.json();
 
 
 
 
 
-        if(sec1.classList!="hide"){
-            sec1.removeChild(document.getElementById("view"))
-            const newview=document.createElement("div");
-            newview.setAttribute('id','view');
-            sec1.appendChild(newview);
-            
-            // sec1.remove();
-            
+    if(sec1.classList!="hide"){
+        sec1.removeChild(document.getElementById("view"))
+        const newview=document.createElement("div");
+        newview.setAttribute('id','view');
+        sec1.appendChild(newview);
+        
+        // sec1.remove();
+        
+        
+    }
+    if(sec1.classList=="hide"){
+        if(imgbox.classList!="hide"){
+
+            imgbox.classList.add("hide");
             
         }
-        if(sec1.classList=="hide"){
-            if(imgbox.classList!="hide"){
 
-                imgbox.classList.add("hide");
-                
-            }
+        sec1.classList.remove("hide");
+    }
+    const movel=document.createElement('div');
+    movel.classList.add("mov");
+    movel.innerHTML=`<img src="${respdata.Poster}" alt="movie">`;
+    const movtext=document.createElement('div');
+    movtext.classList.add("box1");
+    movtext.innerHTML=`<h1>
+    ${respdata.Title}
+</h1>
+<h2>
+   OVERVIEW
+</h2>
+<p>${respdata.Plot}
 
-            sec1.classList.remove("hide");
-        }
-        const movel=document.createElement('div');
-        movel.classList.add("mov");
-        movel.innerHTML=`<img src="${respdata.Poster}" alt="movie">`;
-        const movtext=document.createElement('div');
-        movtext.classList.add("box1");
-        movtext.innerHTML=`<h1>
-        ${respdata.Title}
-    </h1>
-   <h2>
-       OVERVIEW
-   </h2>
-   <p>${respdata.Plot}
+</p>
 
-   </p>
-   
-   <span class="movinfo">Duration : ${respdata.Runtime}</span><br>
-   <span class="movinfo">Year : ${respdata.Year}</span><br>
-   <span class="movinfo">Genre : ${respdata.Genre}</span><br>
-   <span class="movinfo">Actors : ${respdata.Actors}</span><br>
-   <span class="movinfo">Country : ${respdata.Country}</span><br>
-   <span class="movinfo">Production : ${respdata.Production}</span><br>
-   <span class="movinfo">IMDB RATINGS : ${respdata.imdbRating}</span>`;
-   document.getElementById("view").appendChild(movel);
-   document.getElementById("view").appendChild(movtext);
-        }
+<span class="movinfo">Duration : ${respdata.Runtime}</span><br>
+<span class="movinfo">Year : ${respdata.Year}</span><br>
+<span class="movinfo">Genre : ${respdata.Genre}</span><br>
+<span class="movinfo">Actors : ${respdata.Actors}</span><br>
+<span class="movinfo">Country : ${respdata.Country}</span><br>
+<span class="movinfo">Production : ${respdata.Production}</span><br>
+<span class="movinfo">IMDB RATINGS : ${respdata.imdbRating}</span>`;
+document.getElementById("view").appendChild(movel);
+document.getElementById("view").appendChild(movtext);
+    }
     // function submitLoginForm1(event){
     //     event.preventDefault();
     //     username.innerHTML=`<span id="user-name">${event.target["name"].value}</span>`;    
