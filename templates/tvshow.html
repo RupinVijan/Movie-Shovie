@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Shovie</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="newlogo.png" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='newlogo.png') }}" />
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="222015586473-dinqfj0r1p4k24uq1e6q6unejvonhcia.apps.googleusercontent.com">
 </head>
@@ -20,7 +20,7 @@
         </div>
         <a href="index.html">
         <div id="mid" class="row">
-            <img src="newlogo.png" alt="" id="logo">
+            <img src="{{ url_for('static', filename='newlogo.png') }}" alt="" id="logo">
             <span id="heading-name">Movie Shovie</span>
         </div></a>
         <div id="right" class="row">
@@ -96,6 +96,6 @@
     
     
     
-    <script src="scripts1.js"></script>
+    <script src="{{ url_for('static', filename='scripts1.js') }}"></script>
 </body>
 </html>
