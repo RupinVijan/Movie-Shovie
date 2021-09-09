@@ -154,7 +154,7 @@ body{
  #imgbox{
      padding:50px;
      margin: auto;
-     width:80%;
+     min-width:50%;
      flex-wrap: wrap;
      justify-content: space-evenly;
      align-items: center;
@@ -293,4 +293,104 @@ body{
     justify-content: center;
     /* align-items: center; */
     margin:100px auto;
+}
+@media only screen and (max-width: 800px) {
+    .btn{
+        font-size: 1rem;
+        margin: 10px 5px;
+    }
+    #logo{
+        width: 40px;
+        height: 40px;
+    }
+    #user-name{
+        font-size: 1rem;
+        margin-right: 4px;
+    }
+    #heading-name{
+        font-size: 1.2rem;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    nav ul{
+        margin-left: -45px;
+    }
+    .btn{
+        font-size:0.9rem;
+        margin: 10px 5px;
+    }
+    #logo{
+        width: 40px;
+        height: 40px;
+        margin-top: 25px;
+    }
+    #user-name{
+        font-size:0.9rem;
+        margin-right: 4px;
+    }
+    #heading-name{
+        font-size: 1rem;
+    }
+    #user-image{
+        height: 30px;
+        width: 35px;
+    }
+    #search{
+        font-size: 1rem;
+        min-width: 300px;
+    }
+    #search-btn{
+        padding: 1px 1px;
+    }
+    #submit-btn{
+        padding: 1px 1px;
+    }
+    #list{
+        display:none;
+    }
+    #social-box{
+        flex-direction:row;
+    }
+    
+
+}
+@media only screen and (max-width: 440px) {
+
+    nav ul{
+        margin-left: -45px;
+    }
+    .btn{
+        font-size:0.9rem;
+        margin: 10px 5px;
+    }
+    #logo{
+        width: 40px;
+        height: 40px;
+        margin-top: 25px;
+    }
+    #user-name{
+        font-size:0.9rem;
+        margin-right: 4px;
+        display: none;
+    }
+    #heading-name{
+        font-size: 1rem;
+        margin: 27px 3px;
+    }
+    #user-image{
+        height: 30px;
+        width: 35px;
+        display: none;
+    }
+    #list{
+        display:none;
+    }
+    #social-box{
+        flex-direction:row;
+    }
+    
+
 }

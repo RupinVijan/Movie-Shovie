@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Shovie</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='newlogo.png') }}" />
+    
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <meta name="google-signin-client_id" content="222015586473-dinqfj0r1p4k24uq1e6q6unejvonhcia.apps.googleusercontent.com">
 </head>
 <body>
-    <nav>
+    <nav >
         <div id="left">
             <ul class="row">
                 <li><a href="index.html" ><button class="btn" id="movies">Movies</button></a></li>
@@ -29,6 +30,11 @@
     
         </div>
     </nav>
+
+
+
+
+
     <div id="login" class="hide">
         <form action="" id="loginform" onsubmit="submitLoginForm1(event)" >
             <input type="text" placeholder="Name" name="name" required><br>
